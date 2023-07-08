@@ -1,0 +1,160 @@
+import React from "react";
+
+
+export default function Login() {
+  
+
+  
+    return (
+      <div className="base-container" ref={this.props.containerRef}>
+        <div className="header">Login</div>
+        <div className="content">
+          <div className="form">
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input type="text" name="username" placeholder="username" />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input type="password" name="password" placeholder="password" />
+            </div>
+          </div>
+        </div>
+        <div className="footer">
+          <button type="button" className="btn">
+            Login
+          </button>
+        </div>
+      </div>
+    );
+    }
+
+
+
+
+    home page
+import ChiefsSection from "../components/ChiefsSection";
+     <ChiefsSection />
+
+
+
+     Login
+
+     function Login(){
+      const [values, setValues] = useState({
+        email : '',
+        password : ''
+      })
+     }
+
+
+     Loginvalidation
+
+     function validation
+
+
+ app.post('/signup', (req, res)=> {
+        const sql = "INSERT INTO signin(`name`, `email`, `password`, `confirm`) VALUES (?)";
+        const values =[
+            req.body.name,
+            req.body.email,
+            req.body.password,
+            req.body.confirm
+        ]
+        db.query(sql, values, (err, data)=> {
+            if(err) {
+                return res.json("Error");
+            }
+            return res.json(data);
+        })
+    })
+
+
+
+recipes = [
+        {
+            id: 1,
+            title: "Chicken Pan Pizza",
+            image: "/img/gallery/img_1.jpg"
+        }, 
+        
+        {
+            id: 2,
+            title: "American Cheese Burger",
+            image: "/img/gallery/img_5.jpg"
+        },
+        {
+            id:3,
+            title: "Mutton Biriyani",
+            image: "/img/gallery/img_6.jpg"
+        },
+        {
+            id:4,
+            title: "Japanese Sushi",
+            image: "/img/gallery/img_10.jpg"
+        },
+        
+        {
+            id:5,
+            title: "Spaghetti and Meatballs",
+            image: "/img/gallery/img_4.jpg"
+        },
+        {
+            id: 6,
+            title: "American Cheese Burger",
+            image: "/img/gallery/img_5.jpg"
+        },
+       
+       
+      
+    ].sort(() => Math.random() - 0.5)
+
+
+    {/* <RecipeCard /> */}
+                {recipes.map((recipe, index) => (
+                    <RecipeCard key={index} recipe={recipe} />
+                ))}
+
+
+                after Login
+
+                import { useState } from "react";
+
+
+
+export default function Account({ loggedIn }){
+
+    const [profilePhoto, setProfilePhoto] = useState('default-profile.jpg');
+    const [showChooseFile, setShowChooseFile] = useState(true);
+
+    const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      const uploadedPhoto = e.target.result;
+      setProfilePhoto(uploadedPhoto);
+      setShowChooseFile(false);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+  if (!loggedIn) {
+    return null; 
+  }
+
+    return(
+        <div className="Account">
+          
+            <img src={profilePhoto}  className="Profile" alt=""></img><br></br><br></br>
+            <div className="file-input-container">
+            <input type="file" accept="image/*" onChange={handleFileChange}></input>
+            {showChooseFile &&<span className="file-input-label">Choose a file</span>}
+      </div><br></br><br></br>
+            <h2> UserName: </h2><br></br>
+            <h2> Email: </h2>
+        </div>
+    )
+}

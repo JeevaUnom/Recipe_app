@@ -1,0 +1,49 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faBarsProgress, faBowlFood, faCarrot, faCartShopping, faClockFour, faCocktail, faPlateWheat, faStar } from "@fortawesome/free-solid-svg-icons"
+import { useState } from "react";
+
+export default function RecipeDetail({ recipe, loggedIn }) {
+  const [rating, setRating] = useState(0);
+
+  const handleRating = (e) => {
+    const newRating = parseInt(e.target.value);
+    setRating(newRating);
+  };
+
+  return (
+    <div>
+      <h1>Recipe Title</h1>
+      <br /><hr /><br />
+      <center>
+        <div className="img_container">
+          <img src="img\logo\foodcourt-logo-fork-spoon-icon-600w-1508137934-transformed.webp" className="rec_img" alt="recipe-img" /><br /><br /><hr /><br />
+        </div>
+      </center>
+
+      <h3><FontAwesomeIcon className="icon" icon={faClockFour} />Total timing</h3><br /><hr /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faCocktail} />Cuisine</h3><br /><hr /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faBowlFood} />Course</h3><br /><hr /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faCarrot} />Diet</h3><br /><hr /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faPlateWheat} />No. of Servings</h3><br /><hr /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faCartShopping} />Ingredients</h3><br /><hr className="custom-hr" /><br />
+      <h3><FontAwesomeIcon className="icon" icon={faBarsProgress} />Steps</h3><hr /><br />
+
+      <div>
+        <h3><FontAwesomeIcon className="icon" icon={faStar} />Ratings</h3>
+        <br />
+        1
+        <input
+          type="range"
+          className="rating"
+          min={0}
+          max={10}
+          step={1}
+          value={rating}
+          onChange={handleRating}
+          disabled={!loggedIn} // Disable the range input when not logged in
+        />
+        10
+      </div>
+    </div>
+  );
+}
