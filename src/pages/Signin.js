@@ -5,7 +5,6 @@ import validation from "./Signupvalidation"
 import React, { useState } from "react"
 import axios from 'axios'
 import { useNavigate } from "react-router-dom"
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
  export default function Signin(){
     
@@ -42,23 +41,7 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
 
        }
 
-       const handleLoginSuccess = (response) => {
-        console.log('Login Success:', response);
-      };
-    
-      const handleLogoutSuccess = () => {
-        console.log('Logout Success');
-      };
-    
-      const handleLoginFailure = (error) => {
-        
-        console.log('Login Failure:', error);
-        
-      };
-    
-      const handleLogoutFailure = (error) => {
-        console.log('Logout Failure:', error);
-      };
+     
   
     return (
         <div className="log-container">
@@ -67,24 +50,9 @@ import { GoogleLogin, GoogleLogout } from 'react-google-login';
             <hr></hr>
             <br></br>
 
-            <div>
-          <h4>Google Sign-In:</h4>
-          <GoogleLogin
-            clientId="869829290628-l0dvjfhraj3ablg1qh7meag6rmkgk8mt.apps.googleusercontent.com"
-            buttonText="Login with Google"
-            onSuccess={handleLoginSuccess}
-            onFailure={handleLoginFailure}
-            cookiePolicy="single_host_origin"
-          />
-          <GoogleLogout
-            clientId="869829290628-l0dvjfhraj3ablg1qh7meag6rmkgk8mt.apps.googleusercontent.com"
-            buttonText="Logout"
-            onLogoutSuccess={handleLogoutSuccess}
-            onFailure={handleLogoutFailure}
-          />
-        </div>
+            
       <br></br>
-      <h5>OR</h5>
+      
       <br></br>
             <form className="login-form" onSubmit={handleSubmit}>
 

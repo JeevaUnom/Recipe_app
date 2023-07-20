@@ -78,9 +78,10 @@ export default function Settings(){
     const primaryColors = [
         "rgb(33, 150, 243)",
         "rgb(255, 0, 86)",
-        "rgb(255, 193, 7)",
+        "rgba(244, 248, 7, 0.89)",
         "rgb(0, 200, 83)",
-        "rgb(156, 39, 176)"
+        "rgb(224, 150, 13)",
+        "rgb(217, 13, 224)"
     ]
     const fontSizes = [
         {
@@ -93,7 +94,7 @@ export default function Settings(){
         },
         {
             title: "Large",
-            value: "20px"
+            value: "18px"
         }
     ]
     const animationSpeeds = [

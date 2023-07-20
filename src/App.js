@@ -17,7 +17,10 @@ import {
   import Login from "./pages/Login";
   import Account from "./pages/Account";
   import Navbar from "./components/Navbar";
+  import FloatingButton from "./components/Floatbutton";
 
+
+  
   function App() {
     return (
       <Router>
@@ -32,9 +35,10 @@ import {
             <Route path="/more" element={<More />} />
             <Route path="/recipedetail" element={<Recipedetail />} />
             <Route path="/account" element={<Account />} />
-
+           
           </Routes>
         </div>
+        <FloatingButton />
         <Footer />
       </Router>
     )
